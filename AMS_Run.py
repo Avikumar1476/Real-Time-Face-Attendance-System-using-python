@@ -59,7 +59,7 @@ def manually_fill():
         ###Connect to the database
         try:
             global cursor
-            connection = pymysql.connect(host='localhost', user='root', password='', db='manually_fill_attendance')
+            connection = pymysql.connect(host='localhost', user='root', password='787898', port = 3306, database='manually_fill_attendance')
             cursor = connection.cursor()
         except Exception as e:
             print(e)
@@ -156,7 +156,7 @@ def manually_fill():
             def create_csv():
                 import csv
                 cursor.execute("select * from " + DB_table_name + ";")
-                csv_name='C:/Users/kusha/PycharmProjects/Attendace managemnt system/Attendance/Manually Attendance/'+DB_table_name+'.csv'
+                csv_name='C:/Users/Avinash Kumar/Desktop/Collage_project/Project/Attendace_management_system/Attendance/Manually Attendance/'+DB_table_name+'.csv'
                 with open(csv_name, "w") as csv_file:
                     csv_writer = csv.writer(csv_file)
                     csv_writer.writerow([i[0] for i in cursor.description])  # write headers
@@ -210,7 +210,7 @@ def manually_fill():
 
             def attf():
                 import subprocess
-                subprocess.Popen(r'explorer /select,"C:\Users\kusha\PycharmProjects\Attendace managemnt system\Attendance\Manually Attendance\-------Check atttendance-------"')
+                subprocess.Popen(r'explorer /select,"C:\Users\Avinash Kumar\Desktop\Collage_project\Project\Attendace_management_system\Attendance\Manually Attendance\"')
 
             attf = tk.Button(MFW,  text="Check Sheets",command=attf,fg="black"  ,bg="lawn green"  ,width=12  ,height=1 ,activebackground = "Red" ,font=('times', 14, ' bold '))
             attf.place(x=730, y=410)
@@ -396,7 +396,7 @@ def subjectchoose():
                 ###Connect to the database
                 try:
                     global cursor
-                    connection = pymysql.connect(host='localhost', user='root', password='', db='Face_reco_fill')
+                    connection = pymysql.connect(host='localhost', user='root', password='787898', port = 3306, database='face_reco_fill')
                     cursor = connection.cursor()
                 except Exception as e:
                     print(e)
@@ -431,7 +431,7 @@ def subjectchoose():
                 root = tkinter.Tk()
                 root.title("Attendance of " + Subject)
                 root.configure(background='snow')
-                cs = 'C:/Users/kusha/PycharmProjects/Attendace managemnt system/' + fileName
+                cs = 'C:/Users/Avinash Kumar/Desktop/Collage_project/Project/Attendace_management_system/' + fileName
                 with open(cs, newline="") as file:
                     reader = csv.reader(file)
                     r = 0
@@ -459,7 +459,7 @@ def subjectchoose():
 
     def Attf():
         import subprocess
-        subprocess.Popen(r'explorer /select,"C:\Users\kusha\PycharmProjects\Attendace managemnt system\Attendance\-------Check atttendance-------"')
+        subprocess.Popen(r'explorer /select,"C:\Users\Avinash Kumar\Desktop\Collage_project\Project\Attendace_management_system\Attendance\"')
 
     attf = tk.Button(windo,  text="Check Sheets",command=Attf,fg="black"  ,bg="lawn green"  ,width=12  ,height=1 ,activebackground = "Red" ,font=('times', 14, ' bold '))
     attf.place(x=430, y=255)
@@ -486,8 +486,8 @@ def admin_panel():
         username = un_entr.get()
         password = pw_entr.get()
 
-        if username == 'kushal' :
-            if password == 'kushal14320':
+        if username == 'Avinash' :
+            if password == 'Avinash123':
                 win.destroy()
                 import csv
                 import tkinter
@@ -495,7 +495,7 @@ def admin_panel():
                 root.title("Student Details")
                 root.configure(background='snow')
 
-                cs = 'C:/Users/kusha/PycharmProjects/Attendace managemnt system/StudentDetails/StudentDetails.csv'
+                cs = 'C:/Users/Avinash Kumar/Desktop/Collage_project/Project/Attendace_management_system/StudentDetails/StudentDetails.csv'
                 with open(cs, newline="") as file:
                     reader = csv.reader(file)
                     r = 0
